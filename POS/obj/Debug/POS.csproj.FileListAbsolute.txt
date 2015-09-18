@@ -1,0 +1,11 @@
+C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\bin\Debug\POS.exe.config
+C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\bin\Debug\POS.exe
+C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\bin\Debug\POS.pdb
+C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\POS.MainForm.resources
+C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\POS.ProductList.resources
+C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\POS.Properties.Resources.resources
+C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\POS.Setting.resources
+C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\POS.csproj.GenerateResource.Cache
+C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\POS.exe
+C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\POS.pdb
+C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
