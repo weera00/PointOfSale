@@ -17,49 +17,24 @@ namespace POS
         SqlConnection objConn = new SqlConnection();
         SqlCommand objCmd=new SqlCommand();
         SqlDataAdapter objDa=new SqlDataAdapter();
-        String dbhost = ConfigurationSettings.AppSettings["dbhost"].ToString();
-        String port = ConfigurationSettings.AppSettings["port"].ToString();
-        String user = ConfigurationSettings.AppSettings["user"].ToString();
-        String pass = ConfigurationSettings.AppSettings["pass"].ToString();
-        String dbname = ConfigurationSettings.AppSettings["dbname"].ToString();
+        String strConnString = @ConfigurationManager.ConnectionStrings["strConnString"].ToString();
 
-        String strConnString= "Server=localhost\\SQLEXPRESS;Database=myDataBase;User Id=weera;Password=passTh;";
+        //private String strConnString= "Server=localhost\\SQLEXPRESS;Database=myDataBase;User Id=weera;Password=passTh;";
         
-
-        String strSql;
-
         public ProductList()
         {
             InitializeComponent();
-            strConnString = "Server=" + dbhost + "\\SQLEXPRESS;Database="+dbname+";User Id="+user+";Password="+pass+";";
-            open();
+            //strConnString = "Server=" + dbhost + "\\SQLEXPRESS;Database="+dbname+";User Id="+user+";Password="+pass+";";
             list();
         }
-        
-        public void open()
-        {
-            try
-            {
-            objConn.ConnectionString = strConnString;
-            objConn.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);                
-            }
 
-       }
-
-        public void close() {
-            objConn.Close();
-        }
         private void list() {
             try
             {
                 using (SqlConnection c = new SqlConnection(
                    // Properties.Settings.Default.DataConnectionString
                    strConnString)) {
-                using (SqlDataAdapter a = new SqlDataAdapter("SELECT id as รหัส,name as ชื่อ,mydate FROM dbo.product", c)) {
+                using (SqlDataAdapter a = new SqlDataAdapter("SELECT id,name,mydate FROM dbo.product", c)) {
                     DataTable dt = new DataTable();
                     a.Fill(dt);
                     datagridProductlist.DataSource = dt; 
@@ -73,17 +48,15 @@ namespace POS
         }
 
         protected override void OnClosing(CancelEventArgs e)
-        {
-            close();
+        {          
             base.OnClosing(e);
         }
 
         private void RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (datagridProductlist.Rows[e.RowIndex].Cells[/*e.ColumnIndex*/0].Value!=null)
-            {
-                //MessageBox.Show(datagridProductlist.Rows[e.RowIndex].Cells[/*e.ColumnIndex*/1].Value.ToString());
-                int id =int.Parse(datagridProductlist.Rows[e.RowIndex].Cells[/*e.ColumnIndex*/0].Value.ToString());
+            {                
+                int id =int.Parse(datagridProductlist.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Product frm = new Product(id);
                 frm.ShowDialog();
             } 

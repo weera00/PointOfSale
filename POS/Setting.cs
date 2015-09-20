@@ -21,11 +21,11 @@ namespace POS
         public void ReadConfig() {
             try
             {  
-                var host = ConfigurationSettings.AppSettings["dbhost"].ToString();
-                var port = ConfigurationSettings.AppSettings["port"].ToString();
-                var dbname = ConfigurationSettings.AppSettings["dbname"].ToString();
-                var user = ConfigurationSettings.AppSettings["user"].ToString();
-                var pass = ConfigurationSettings.AppSettings["pass"].ToString();
+                var host = ConfigurationManager.AppSettings["dbhost"].ToString();
+                var port = ConfigurationManager.AppSettings["port"].ToString();
+                var dbname = ConfigurationManager.AppSettings["dbname"].ToString();
+                var user = ConfigurationManager.AppSettings["user"].ToString();
+                var pass = ConfigurationManager.AppSettings["pass"].ToString();
 
                 txtDbHost.Text = host;
                 txtDbPort.Text = port;
@@ -42,11 +42,17 @@ namespace POS
         {
             try
             {
-                ConfigurationSettings.AppSettings["dbhost"]=host;
-                ConfigurationSettings.AppSettings["port"]=port;
-                ConfigurationSettings.AppSettings["dbname"] = dbname;
-                ConfigurationSettings.AppSettings["user"]=user;
-                ConfigurationSettings.AppSettings["pass"]=pass;
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                config.ConnectionStrings.ConnectionStrings.Add(
+                    new ConnectionStringSettings("strConnString",
+                    "Server="+host+"\\SQLEXPRESS;Database="+dbname+";User Id="+user+";Password="+pass+";"));
+                config.Save(ConfigurationSaveMode.Modified);
+
+                ConfigurationManager.AppSettings["dbhost"] = host;
+                ConfigurationManager.AppSettings["port"]=port;
+                ConfigurationManager.AppSettings["dbname"] = dbname;
+                ConfigurationManager.AppSettings["user"]=user;
+                ConfigurationManager.AppSettings["pass"]=pass;
                
   
                 txtDbHost.Text = host;
@@ -80,10 +86,6 @@ namespace POS
         }
         protected override void OnClosing(CancelEventArgs e)
         {
-            if (false)
-            {
-                e.Cancel = true;
-            }
             base.OnClosing(e);            
         }       
     }

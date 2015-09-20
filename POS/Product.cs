@@ -13,8 +13,6 @@ namespace POS
     public partial class Product : Form
     {
         private int id;
-        private enum mode{ newdata,editdata}
-        mode Mode =mode.newdata;
         public Product()
         {
             InitializeComponent();            
@@ -24,7 +22,7 @@ namespace POS
         {
             InitializeComponent();
             this.id = id;
-            Mode = mode.editdata;
+
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
