@@ -59,18 +59,17 @@ namespace POS
                 using (SqlConnection c = new SqlConnection(
                    // Properties.Settings.Default.DataConnectionString
                    strConnString)) {
-                using (SqlDataAdapter a = new SqlDataAdapter("SELECT * FROM product", c)) {
+                using (SqlDataAdapter a = new SqlDataAdapter("SELECT * FROM dbo.product", c)) {
                     DataTable dt = new DataTable();
                     a.Fill(dt);
-                    datagridProductlist.DataSource = dt;
+                        { datagridProductlist.DataSource = dt; }
                 }
             }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-           
+            }           
         }
 
         protected override void OnClosing(CancelEventArgs e)
