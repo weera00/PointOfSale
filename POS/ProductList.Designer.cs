@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.datagridProductlist = new System.Windows.Forms.DataGridView();
             this.addNewProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addProductToStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.datagridProductlist = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridProductlist)).BeginInit();
             this.SuspendLayout();
@@ -47,14 +47,28 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // datagridProductlist
+            // 
+            this.datagridProductlist.AllowUserToAddRows = false;
+            this.datagridProductlist.AllowUserToDeleteRows = false;
+            this.datagridProductlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridProductlist.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datagridProductlist.Location = new System.Drawing.Point(0, 0);
+            this.datagridProductlist.Name = "datagridProductlist";
+            this.datagridProductlist.ReadOnly = true;
+            this.datagridProductlist.Size = new System.Drawing.Size(705, 339);
+            this.datagridProductlist.TabIndex = 1;
+            this.datagridProductlist.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.RowHeaderMouseClick);
+            // 
             // addNewProductToolStripMenuItem
             // 
             this.addNewProductToolStripMenuItem.Image = global::POS.Properties.Resources.add;
             this.addNewProductToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addNewProductToolStripMenuItem.Name = "addNewProductToolStripMenuItem";
             this.addNewProductToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.addNewProductToolStripMenuItem.Size = new System.Drawing.Size(110, 52);
-            this.addNewProductToolStripMenuItem.Text = "เพิ่มสินค้า";
+            this.addNewProductToolStripMenuItem.Size = new System.Drawing.Size(136, 52);
+            this.addNewProductToolStripMenuItem.Text = "เพิ่มข้อมูลสินค้า";
+            this.addNewProductToolStripMenuItem.Click += new System.EventHandler(this.addNewProductToolStripMenuItem_Click);
             // 
             // addProductToStoreToolStripMenuItem
             // 
@@ -63,15 +77,6 @@
             this.addProductToStoreToolStripMenuItem.Name = "addProductToStoreToolStripMenuItem";
             this.addProductToStoreToolStripMenuItem.Size = new System.Drawing.Size(148, 52);
             this.addProductToStoreToolStripMenuItem.Text = "เพิ่มสินค้าในสต๊อก";
-            // 
-            // datagridProductlist
-            // 
-            this.datagridProductlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridProductlist.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridProductlist.Location = new System.Drawing.Point(0, 0);
-            this.datagridProductlist.Name = "datagridProductlist";
-            this.datagridProductlist.Size = new System.Drawing.Size(705, 339);
-            this.datagridProductlist.TabIndex = 1;
             // 
             // ProductList
             // 

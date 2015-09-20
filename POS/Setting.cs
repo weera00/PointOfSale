@@ -38,7 +38,7 @@ namespace POS
                 MessageBox.Show("เกิดข้อผิดผลาด "+ex.Message,"เกิดข้อผิดผลาด",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
-        void setConfig(String host = "127.0.0.1",String port ="1433",String dbname= "myDatabase", String user = "weera",String pass = "passTh")
+        void setConfig(String host = "localhost",String port ="1433",String dbname= "myDatabase", String user = "weera",String pass = "passTh")
         {
             try
             {

@@ -9,3 +9,4 @@ C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\P
 C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\POS.exe
 C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\POS.pdb
 C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
+C:\Users\weera\documents\visual studio 2015\Projects\PointOfSale\POS\obj\Debug\POS.Product.resources

@@ -59,10 +59,10 @@ namespace POS
                 using (SqlConnection c = new SqlConnection(
                    // Properties.Settings.Default.DataConnectionString
                    strConnString)) {
-                using (SqlDataAdapter a = new SqlDataAdapter("SELECT * FROM dbo.product", c)) {
+                using (SqlDataAdapter a = new SqlDataAdapter("SELECT id as รหัส,name as ชื่อ,mydate FROM dbo.product", c)) {
                     DataTable dt = new DataTable();
                     a.Fill(dt);
-                        { datagridProductlist.DataSource = dt; }
+                    datagridProductlist.DataSource = dt; 
                 }
             }
             }
@@ -76,6 +76,23 @@ namespace POS
         {
             close();
             base.OnClosing(e);
+        }
+
+        private void RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (datagridProductlist.Rows[e.RowIndex].Cells[/*e.ColumnIndex*/0].Value!=null)
+            {
+                //MessageBox.Show(datagridProductlist.Rows[e.RowIndex].Cells[/*e.ColumnIndex*/1].Value.ToString());
+                int id =int.Parse(datagridProductlist.Rows[e.RowIndex].Cells[/*e.ColumnIndex*/0].Value.ToString());
+                Product frm = new Product(id);
+                frm.ShowDialog();
+            } 
+        }
+
+        private void addNewProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Product frm = new Product();
+            frm.ShowDialog();
         }
     }
 }
