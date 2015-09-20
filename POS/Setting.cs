@@ -43,18 +43,26 @@ namespace POS
             try
             {
                 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                config.ConnectionStrings.ConnectionStrings.RemoveAt(1);
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("connectionStrings");
+
+                config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 config.ConnectionStrings.ConnectionStrings.Add(
                     new ConnectionStringSettings("strConnString",
                     "Server="+host+"\\SQLEXPRESS;Database="+dbname+";User Id="+user+";Password="+pass+";"));
-                config.Save(ConfigurationSaveMode.Modified);
 
-                ConfigurationManager.AppSettings["dbhost"] = host;
-                ConfigurationManager.AppSettings["port"]=port;
-                ConfigurationManager.AppSettings["dbname"] = dbname;
-                ConfigurationManager.AppSettings["user"]=user;
-                ConfigurationManager.AppSettings["pass"]=pass;
-               
-  
+
+                config.AppSettings.Settings["dbhost"].Value = host;
+                config.AppSettings.Settings["port"].Value=port;
+                config.AppSettings.Settings["dbname"].Value = dbname;
+                config.AppSettings.Settings["user"].Value=user;
+                config.AppSettings.Settings["pass"].Value=pass;
+
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("AppSettings");
+                ConfigurationManager.RefreshSection("connectionStrings");
+
                 txtDbHost.Text = host;
                 txtDbPort.Text = port;
                 txtDbName.Text = dbname;
