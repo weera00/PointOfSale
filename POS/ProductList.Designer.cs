@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.addNewProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addProductToStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.datagridProductlist = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridProductlist)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -46,15 +46,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(705, 56);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(705, 339);
-            this.dataGridView1.TabIndex = 1;
             // 
             // addNewProductToolStripMenuItem
             // 
@@ -73,19 +64,28 @@
             this.addProductToStoreToolStripMenuItem.Size = new System.Drawing.Size(148, 52);
             this.addProductToStoreToolStripMenuItem.Text = "เพิ่มสินค้าในสต๊อก";
             // 
+            // datagridProductlist
+            // 
+            this.datagridProductlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridProductlist.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datagridProductlist.Location = new System.Drawing.Point(0, 0);
+            this.datagridProductlist.Name = "datagridProductlist";
+            this.datagridProductlist.Size = new System.Drawing.Size(705, 339);
+            this.datagridProductlist.TabIndex = 1;
+            // 
             // ProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 339);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.datagridProductlist);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ProductList";
             this.Text = "รายการสินค้า";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridProductlist)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,7 +94,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView datagridProductlist;
         private System.Windows.Forms.ToolStripMenuItem addNewProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addProductToStoreToolStripMenuItem;
     }

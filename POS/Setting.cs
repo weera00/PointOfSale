@@ -23,31 +23,35 @@ namespace POS
             {  
                 var host = ConfigurationSettings.AppSettings["dbhost"].ToString();
                 var port = ConfigurationSettings.AppSettings["port"].ToString();
+                var dbname = ConfigurationSettings.AppSettings["dbname"].ToString();
                 var user = ConfigurationSettings.AppSettings["user"].ToString();
                 var pass = ConfigurationSettings.AppSettings["pass"].ToString();
 
                 txtDbHost.Text = host;
                 txtDbPort.Text = port;
+                txtDbName.Text = dbname;
                 txtDbUser.Text = user;
                 txtDbPass.Text = pass;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show("เกิดข้อผิดผลาด "+ex.Message,"เกิดข้อผิดผลาด",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
-        void setConfig(String host = "127.0.0.1",String port ="1433",String user = "root",String pass = "passTh")
+        void setConfig(String host = "127.0.0.1",String port ="1433",String dbname= "myDatabase", String user = "weera",String pass = "passTh")
         {
             try
             {
                 ConfigurationSettings.AppSettings["dbhost"]=host;
                 ConfigurationSettings.AppSettings["port"]=port;
+                ConfigurationSettings.AppSettings["dbname"] = dbname;
                 ConfigurationSettings.AppSettings["user"]=user;
                 ConfigurationSettings.AppSettings["pass"]=pass;
                
   
                 txtDbHost.Text = host;
                 txtDbPort.Text = port;
+                txtDbName.Text = dbname;
                 txtDbUser.Text = user;
                 txtDbPass.Text = pass;
             }
@@ -72,7 +76,7 @@ namespace POS
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            setConfig(txtDbHost.Text.Trim(),txtDbPort.Text.Trim(),txtDbUser.Text.Trim(),txtDbPass.Text.Trim());
+            setConfig(txtDbHost.Text.Trim(),txtDbPort.Text.Trim(),txtDbName.Text.Trim(),txtDbUser.Text.Trim(),txtDbPass.Text.Trim());
         }
         protected override void OnClosing(CancelEventArgs e)
         {
