@@ -14,9 +14,6 @@ namespace POS
 {
     public partial class ProductList : Form
     {
-        SqlConnection objConn = new SqlConnection();
-        SqlCommand objCmd=new SqlCommand();
-        SqlDataAdapter objDa=new SqlDataAdapter();
         String strConnString = @ConfigurationManager.ConnectionStrings["strConnString"].ToString();
 
         //private String strConnString= "Server=localhost\\SQLEXPRESS;Database=myDataBase;User Id=weera;Password=passTh;";

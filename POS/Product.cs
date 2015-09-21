@@ -33,7 +33,7 @@ namespace POS
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
         protected override void OnClosing(CancelEventArgs e)
         {
