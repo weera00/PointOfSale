@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtProductID = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,29 +51,35 @@
             this.cancleToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(494, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(494, 56);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // saveToolStripMenuItem
             // 
+            this.saveToolStripMenuItem.Image = global::POS.Properties.Resources.accept;
+            this.saveToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(91, 52);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
-            // cancleToolStripMenuItem
-            // 
-            this.cancleToolStripMenuItem.Name = "cancleToolStripMenuItem";
-            this.cancleToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.cancleToolStripMenuItem.Text = "Cancle";
-            // 
             // closeToolStripMenuItem
             // 
+            this.closeToolStripMenuItem.Image = global::POS.Properties.Resources.delete;
+            this.closeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(96, 52);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // cancleToolStripMenuItem
+            // 
+            this.cancleToolStripMenuItem.Image = global::POS.Properties.Resources.delete_page;
+            this.cancleToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.cancleToolStripMenuItem.Name = "cancleToolStripMenuItem";
+            this.cancleToolStripMenuItem.Size = new System.Drawing.Size(103, 52);
+            this.cancleToolStripMenuItem.Text = "Cancle";
             // 
             // contextMenuStrip1
             // 
@@ -107,19 +113,19 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "วันที่";
             // 
-            // textBox1
+            // txtProductID
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtProductID.Location = new System.Drawing.Point(142, 78);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.Size = new System.Drawing.Size(247, 20);
+            this.txtProductID.TabIndex = 5;
             // 
-            // textBox2
+            // txtProductName
             // 
-            this.textBox2.Location = new System.Drawing.Point(142, 121);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(247, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtProductName.Location = new System.Drawing.Point(142, 121);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(247, 20);
+            this.txtProductName.TabIndex = 6;
             // 
             // dateTimePicker1
             // 
@@ -135,8 +141,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 392);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtProductName);
+            this.Controls.Add(this.txtProductID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -161,8 +167,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtProductID;
+        private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

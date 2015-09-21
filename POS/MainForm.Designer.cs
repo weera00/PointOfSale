@@ -32,6 +32,8 @@
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.priceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,12 +51,14 @@
             // 
             // productToolStripMenuItem
             // 
+            this.productToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productListToolStripMenuItem,
+            this.productStockToolStripMenuItem});
             this.productToolStripMenuItem.Image = global::POS.Properties.Resources.attachment;
             this.productToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
             this.productToolStripMenuItem.Size = new System.Drawing.Size(92, 52);
             this.productToolStripMenuItem.Text = "สินค้า";
-            this.productToolStripMenuItem.Click += new System.EventHandler(this.productToolStripMenuItem_Click);
             // 
             // priceToolStripMenuItem
             // 
@@ -72,6 +76,20 @@
             this.settingDatabaseToolStripMenuItem.Size = new System.Drawing.Size(135, 52);
             this.settingDatabaseToolStripMenuItem.Text = "ตั้งค่าฐานข้อมูล";
             this.settingDatabaseToolStripMenuItem.Click += new System.EventHandler(this.settingDatabaseToolStripMenuItem_Click);
+            // 
+            // productListToolStripMenuItem
+            // 
+            this.productListToolStripMenuItem.Name = "productListToolStripMenuItem";
+            this.productListToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productListToolStripMenuItem.Text = "รายการสินค้า";
+            this.productListToolStripMenuItem.Click += new System.EventHandler(this.productListToolStripMenuItem_Click);
+            // 
+            // productStockToolStripMenuItem
+            // 
+            this.productStockToolStripMenuItem.Name = "productStockToolStripMenuItem";
+            this.productStockToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productStockToolStripMenuItem.Text = "สต๊อกสินค้า";
+            this.productStockToolStripMenuItem.Click += new System.EventHandler(this.productStockToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -95,6 +113,8 @@
         private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem priceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingDatabaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productStockToolStripMenuItem;
     }
 }
 
