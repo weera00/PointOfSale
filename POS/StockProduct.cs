@@ -15,6 +15,7 @@ namespace POS
         public StockProduct()
         {
             InitializeComponent();
+            txtProductName.ReadOnly = true;
         }
     }
 }
