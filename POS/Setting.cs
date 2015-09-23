@@ -43,7 +43,7 @@ namespace POS
             try
             {
                 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                config.ConnectionStrings.ConnectionStrings.RemoveAt(1);
+                config.ConnectionStrings.ConnectionStrings.RemoveAt(0);
                 config.Save(ConfigurationSaveMode.Modified);
                 ConfigurationManager.RefreshSection("connectionStrings");
 
